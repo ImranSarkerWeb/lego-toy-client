@@ -1,0 +1,134 @@
+{
+    "toys": [
+      {
+        "_id": "1",
+        "name": "LEGO Classic Creative Bricks",
+        "price": 19.99,
+        "description": "Build a world of endless creative possibilities with this classic LEGO set. Includes a variety of colorful bricks and pieces.",
+        "ratings": 4.5,
+        "image": "https://cdn.pixabay.com/photo/2015/03/15/18/34/building-674828_960_720.jpg"
+      },
+      {
+        "_id": "2",
+        "name": "LEGO Star Wars Millennium Falcon",
+        "price": 149.99,
+        "description": "Recreate epic space battles with the iconic Millennium Falcon from the Star Wars saga. Includes minifigures of Han Solo, Chewbacca, and more.",
+        "ratings": 4.8,
+        "image": "https://cdn.pixabay.com/photo/2015/03/15/18/34/building-674828_960_720.jpg"
+      },
+      {
+        "_id": "3",
+        "name": "LEGO Technic Bugatti Chiron",
+        "price": 349.99,
+        "description": "Experience the engineering marvel of the Bugatti Chiron supercar with this advanced LEGO Technic set. Features working gears, pistons, and sleek design.",
+        "ratings": 4.9,
+        "image": "https://cdn.pixabay.com/photo/2015/03/15/18/34/building-674828_960_720.jpg"
+      },
+      {
+        "_id": "4",
+        "name": "LEGO Friends Heartlake City Resort",
+        "price": 99.99,
+        "description": "Join the LEGO Friends in their Heartlake City Resort and enjoy water slides, pool, beach area, and more. Includes mini-doll figures and accessories.",
+        "ratings": 4.7,
+        "image": "https://example.com/lego-friends-heartlake-city-resort.jpg"
+      },
+      {
+        "_id": "5",
+        "name": "LEGO Marvel Super Heroes Iron Man Hall of Armor",
+        "price": 59.99,
+        "description": "Build Tony Stark's iconic Hall of Armor and display his suits. Includes Iron Man minifigures and interchangeable armor suits.",
+        "ratings": 4.6,
+        "image": "https://example.com/lego-marvel-iron-man-hall-of-armor.jpg"
+      },
+      {
+        "_id": "6",
+        "name": "LEGO Creator Expert Taj Mahal",
+        "price": 369.99,
+        "description": "Recreate the majestic Taj Mahal with this highly detailed LEGO set. Perfect for architecture enthusiasts and LEGO collectors.",
+        "ratings": 4.7,
+        "image": "https://example.com/lego-creator-expert-taj-mahal.jpg"
+      },
+      {
+        "_id": "7",
+        "name": "LEGO Harry Potter Hogwarts Castle",
+        "price": 129.99,
+        "description": "Step into the magical world of Harry Potter with this Hogwarts Castle LEGO set. Features iconic locations and minifigures from the series.",
+        "ratings": 4.8,
+        "image": "https://example.com/lego-harry-potter-hogwarts-castle.jpg"
+      },
+     
+          {
+            "_id": "8",
+            "name": "LEGO City Deep Space Rocket and Launch Control",
+            "price": 99.99,
+            "description": "Embark on a space adventure with this LEGO City rocket and launch control set. Includes astronauts, space station, and rocket.",
+            "ratings": 4.7,
+            "image": "https://example.com/lego-city-deep-space-rocket.jpg"
+          },
+          {
+            "_id": "9",
+            "name": "LEGO Creator Expert Ford Mustang",
+            "price": 149.99,
+            "description": "Build and display a classic Ford Mustang model with this detailed LEGO Creator set. Features realistic design and customizable options.",
+            "ratings": 4.8,
+            "image": "https://example.com/lego-creator-expert-ford-mustang.jpg"
+          },
+          {
+            "_id": "10",
+            "name": "LEGO Technic Porsche 911 GT3 RS",
+            "price": 299.99,
+            "description": "Experience the engineering excellence of the Porsche 911 GT3 RS with this advanced LEGO Technic set. Features authentic details and mechanisms.",
+            "ratings": 4.9,
+            "image": "https://example.com/lego-technic-porsche-911-gt3-rs.jpg"
+          },
+          {
+            "_id": "11",
+            "name": "LEGO Disney Cinderella's Castle",
+            "price": 349.99,
+            "description": "Recreate the magical world of Cinderella with this stunning LEGO Disney Castle set. Includes iconic characters and intricate details.",
+            "ratings": 4.7,
+            "image": "https://example.com/lego-disney-cinderella-castle.jpg"
+          },
+          {
+            "_id": "12",
+            "name": "LEGO Architecture Statue of Liberty",
+            "price": 119.99,
+            "description": "Build a replica of the iconic Statue of Liberty with this LEGO Architecture set. Celebrate the spirit of freedom and architectural marvel.",
+            "ratings": 4.6,
+            "image": "https://example.com/lego-architecture-statue-of-liberty.jpg"
+          },
+          {
+            "_id": "13",
+            "name": "LEGO Super Mario Adventures with Mario Starter Course",
+            "price": 59.99,
+            "description": "Jump into the world of Super Mario with this interactive LEGO set. Play levels, collect coins, and defeat enemies with LEGO Mario.",
+            "ratings": 4.5,
+            "image": "https://example.com/lego-super-mario-starter-course.jpg"
+          },
+          {
+            "_id": "14",
+            "name": "LEGO Ninjago City",
+            "price": 299.99,
+            "description": "Immerse yourself in the world of Ninjago with this highly detailed LEGO Ninjago City set. Features multiple levels and minifigures.",
+            "ratings": 4.8,
+            "image": "https://example.com/lego-ninjago-city.jpg"
+          },
+        
+              {
+                "_id": "15",
+                "name": "LEGO Ideas International Space Station",
+                "price": 69.99,
+                "description": "Discover the wonders of space with this LEGO Ideas set featuring the International Space Station. Includes astronaut minifigures.",
+                "ratings": 4.7,
+                "image": "https://example.com/lego-ideas-international-space-station.jpg"
+              },
+              {
+                "_id": "16",
+                "name": "LEGO Harry Potter Diagon Alley",
+                "price": 399.99,
+                "description": "Explore the magical shopping street of Diagon Alley with this extensive LEGO Harry Potter set. Features iconic shops and minifigures.",
+                "ratings": 4.9,
+                "image": "https://example.com/lego-harry-potter-diagon-alley.jpg"
+              }
+            ]}
+  
