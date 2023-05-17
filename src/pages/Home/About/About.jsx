@@ -4,16 +4,16 @@ const About = () => {
       <div className="hero-content  flex-col lg:flex-row">
         <div className="relative md:ps-10 mb-12 md:mb-0 md:w-1/2">
           <img
-            src="https://slidesigma.com/themes/html/toystore/assets/img/about-us/570x420.jpg"
+            src="https://cdn.pixabay.com/photo/2020/03/12/19/40/kids-4926030_960_720.jpg"
             className=" w-full rounded-lg shadow-2xl"
           />
           <img
-            src="https://slidesigma.com/themes/html/toystore/assets/img/about-us/275x200.jpg"
+            src="https://cdn.pixabay.com/photo/2014/11/04/13/21/lego-516559_960_720.jpg"
             className="absolute  w-48 md:w-72 top-[60%]  -left-[10px] border-8 border-white rounded-lg shadow-2xl"
           />
 
-          <div className="absolute flex bg-accent gap-2 items-center text-white top-0 right-0 w-1/2 p-4">
-            <span className="text-6xl font-bold">25</span>{" "}
+          <div className="absolute flex bg-accent gap-2 items-center text-white top-0 right-0 md:w-1/2 p-2 md:p-4">
+            <span className="text-4xl md:text-6xl font-bold">25</span>{" "}
             <span className="font-xl font-semibold">Years of experience</span>
           </div>
         </div>

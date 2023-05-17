@@ -1,6 +1,6 @@
 const ServiceCard = () => {
   return (
-    <div className="space-y-4 md:space-y-0 mx-auto md:flex gap-6 my-6">
+    <div className="space-y-4 md:space-y-0 mx-auto md:flex justify-around  my-6">
       <div className="card w-96 bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
           <img
