@@ -1,8 +1,10 @@
+import { Suspense, lazy } from "react";
 import About from "../About/About";
 import Carousel from "../Carousel/Carousel";
 
-// import Gallery from "../Gallery/Gallery";
 import ServiceCard from "../ServiceCard/ServiceCard";
+import TabSection from "../TabSection/TabSection";
+const GalleryPreview = lazy(() => import("../Gallery/Gallery"));
 
 const Home = () => {
   return (
@@ -10,7 +12,10 @@ const Home = () => {
       <Carousel></Carousel>
       <ServiceCard></ServiceCard>
       <About></About>
-      {/* <Gallery></Gallery> */}
+      <Suspense fallback={<>Loding</>}>
+        <GalleryPreview />
+      </Suspense>
+      <TabSection></TabSection>
     </div>
   );
 };
