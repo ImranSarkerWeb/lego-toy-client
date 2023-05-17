@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import lego from "../../../assets/logo/lego-logo.png";
 const NavBar = () => {
   return (
     <div className="navbar bg-base-100">
@@ -53,7 +55,14 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+
+        <div className="text-3xl flex font-semibold items-center">
+          <span> Lego</span>
+          <Link to="/">
+            <img src={lego} className="w-20" />
+          </Link>
+          <span>Store</span>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
