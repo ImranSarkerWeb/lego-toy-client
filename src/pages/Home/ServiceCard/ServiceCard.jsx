@@ -4,7 +4,7 @@ const ServiceCard = () => {
       <div className="card w-96 bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
           <img
-            src="https://cdn.pixabay.com/photo/2018/06/27/12/06/lego-3501431_960_720.jpg"
+            src="https://i.ibb.co/Gkf93x5/lego-3501431-960-720.jpg"
             alt="Delivery Truck"
             className="rounded-xl"
           />
@@ -19,8 +19,8 @@ const ServiceCard = () => {
       <div className="card w-96 bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
           <img
-            src="https://cdn.pixabay.com/photo/2019/01/22/14/47/business-3948253_1280.jpg"
-            alt="Shoes"
+            src="https://i.ibb.co/h73StMh/business-3948253-1280.jpg"
+            alt="Money Back"
             className="rounded-xl "
           />
         </figure>
@@ -35,7 +35,7 @@ const ServiceCard = () => {
         <figure className="px-10 pt-10">
           <img
             src="https://cdn.pixabay.com/photo/2018/11/21/21/54/bunny-3830669_960_720.jpg"
-            alt="Shoes"
+            alt="Payment"
             className="rounded-xl"
           />
         </figure>

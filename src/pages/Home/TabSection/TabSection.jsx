@@ -17,7 +17,7 @@ const TabSection = () => {
             src="https://slidesigma.com/themes/html/toystore/assets/img/shop/500x420-2.jpg"
             alt="Robot toys"
           />
-          <h1 className="text-2xl font-bold text-accent">Robot Toys</h1>
+          <h1 className="md:text-2xl font-bold text-accent">Robot Toys</h1>
         </Tab>
         <Tab>
           {" "}
@@ -26,7 +26,7 @@ const TabSection = () => {
             src="https://slidesigma.com/themes/html/toystore/assets/img/home-1/500-1.jpg"
             alt="brick toyes"
           />
-          <h1 className="text-2xl font-bold text-accent">Brick Toys</h1>
+          <h1 className="md:text-2xl font-bold text-accent">Brick Toys</h1>
         </Tab>
         <Tab>
           {" "}
@@ -35,7 +35,7 @@ const TabSection = () => {
             src="https://slidesigma.com/themes/html/toystore/assets/img/home-1/500-2.jpg"
             alt="doll toyes"
           />
-          <h1 className="text-2xl font-bold text-accent">Doll Toys</h1>
+          <h1 className="md:text-2xl font-bold text-accent">Doll Toys</h1>
         </Tab>
       </TabList>
       <TabPanel>

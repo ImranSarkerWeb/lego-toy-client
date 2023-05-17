@@ -4,6 +4,7 @@ import Carousel from "../Carousel/Carousel";
 
 import ServiceCard from "../ServiceCard/ServiceCard";
 import TabSection from "../TabSection/TabSection";
+import CounterUp from "../CounterUp/CounterUp";
 const GalleryPreview = lazy(() => import("../Gallery/Gallery"));
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
         <GalleryPreview />
       </Suspense>
       <TabSection></TabSection>
+      <CounterUp></CounterUp>
     </div>
   );
 };
