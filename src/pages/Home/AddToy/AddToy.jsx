@@ -87,7 +87,7 @@ const AddToy = () => {
                   <span className="label-text">Sub Category</span>
                 </label>
                 <select className="select select-accent w-full">
-                  <option disabled selected>
+                  <option disabled value="all">
                     Select your toy category
                   </option>
                   <option value="Robot">Robot Toys</option>
