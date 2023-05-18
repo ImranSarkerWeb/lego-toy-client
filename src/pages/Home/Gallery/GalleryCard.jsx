@@ -10,7 +10,7 @@ const GalleryCard = ({ toy }) => {
         </figure>
 
         <div className="absolute rounded-2xl inset-0 bg-slate-300 hover:bg-opacity-30  opacity-0 hover:transition hover:duration-300 hover:opacity-100 card-body ">
-          <h2 className="card-title  ">{name}</h2>
+          <h2 className="card-title text-accent ">{name}</h2>
         </div>
       </div>
     </div>
