@@ -1,45 +1,45 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-// import { AuthContex } from "../../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { FaGithub, FaGoogle } from "react-icons/fa";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Register = () => {
-  //   const { createUser, googleSignIn, githubSignIn } = useContext(AuthContex);
-  //   const [success, setSuccess] = useState("");
-  //   const [error, setError] = useState("");
+  const { createUser } = useContext(AuthContext);
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
 
   const handleRegister = (e) => {
     e.preventDefault();
-    // const form = e.target;
-    // const name = form.name.value;
-    // const email = form.email.value;
-    // const photo = form.photo.value;
-    // const password = form.password.value;
-    // setSuccess("");
-    // setError("");
-    // if (password.length < 6) {
-    //   setError("You password at least 6 character long.");
-    //   return;
-    // }
-    // createUser(email, password)
-    //   .then((result) => {
-    //     const createdUser = result.user;
-    //     setSuccess("User has been created successfully.");
-    //     updateUserProfile(result.user, name, photo)
-    //       .then(() => {
-    //         console.log("user profile updated");
-    //       })
-    //       .catch((error) => {
-    //         console.log(error.message);
-    //       });
-    //     form.reset();
-    //   })
-    //   .catch((error) => {
-    //     console.error(error.message);
-    //     setError(error.message);
-    //   });
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photo = form.photo.value;
+    const password = form.password.value;
+    setSuccess("");
+    setError("");
+    if (password.length < 6) {
+      setError("You password at least 6 character long.");
+      return;
+    }
+    createUser(email, password)
+      .then((result) => {
+        const createdUser = result.user;
+        setSuccess("User has been created successfully.");
+        updateUserProfile(result.user, name, photo)
+          .then(() => {
+            console.log("user profile updated");
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
+        form.reset();
+      })
+      .catch((error) => {
+        console.error(error.message);
+        setError(error.message);
+      });
   };
   const updateUserProfile = (user, name, photo) => {
     return updateProfile(user, {
@@ -87,8 +87,8 @@ const Register = () => {
             required
           />
         </div>
-        {/* {success && <p className="text-green-600">{success}</p>}
-        {error && <p className="text-red-600">{error}</p>} */}
+        {success && <p className="text-green-600">{success}</p>}
+        {error && <p className="text-red-600">{error}</p>}
         <button className="mt-5 btn btn-accent w-full max-w-xs">
           Register
         </button>
