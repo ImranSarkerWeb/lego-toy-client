@@ -1,4 +1,12 @@
+import { useContext, useState } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
+
 const AddToy = () => {
+  const { user } = useContext(AuthContext);
+  const [category, setCategory] = useState("");
+  const handleSelectChange = (event) => {
+    setCategory(event.target.value);
+  };
   const handleAddToy = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -17,11 +25,22 @@ const AddToy = () => {
       sellerName,
       rating,
       price,
+      category,
       desciption,
       qty,
     };
 
     console.log(toyInfo);
+
+    fetch("http://localhost:5000/toys", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(toyInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -63,6 +82,7 @@ const AddToy = () => {
                   type="text"
                   required
                   name="sellerName"
+                  defaultValue={user.displayName}
                   placeholder="Seller Name"
                   className="w-full input input-accent input-bordered"
                 />
@@ -75,6 +95,7 @@ const AddToy = () => {
                   type="text"
                   required
                   name="sellerEmail"
+                  defaultValue={user?.email}
                   placeholder="Seller Email"
                   className="w-full input input-accent input-bordered"
                 />
@@ -86,8 +107,13 @@ const AddToy = () => {
                 <label className="label">
                   <span className="label-text">Sub Category</span>
                 </label>
-                <select className="select select-accent w-full">
-                  <option disabled value="all">
+                <select
+                  defaultValue=""
+                  required
+                  onChange={handleSelectChange}
+                  className="select select-accent w-full"
+                >
+                  <option value="" disabled hidden>
                     Select your toy category
                   </option>
                   <option value="Robot">Robot Toys</option>
@@ -100,7 +126,8 @@ const AddToy = () => {
                   <span className="label-text">Price</span>
                 </label>
                 <input
-                  type="text"
+                  type="number"
+                  step="0.01"
                   required
                   name="price"
                   placeholder="Price"
@@ -114,10 +141,11 @@ const AddToy = () => {
                   <span className="label-text">Rating</span>
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   required
                   name="rating"
                   placeholder="Rating"
+                  step="0.01"
                   className="w-full input input-accent input-bordered"
                 />
               </div>
@@ -126,7 +154,7 @@ const AddToy = () => {
                   <span className="label-text">Available Quantity</span>
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   required
                   name="qty"
                   placeholder="Available Quantity"
