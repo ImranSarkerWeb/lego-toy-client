@@ -6,6 +6,7 @@ import ServiceCard from "../ServiceCard/ServiceCard";
 import TabSection from "../TabSection/TabSection";
 import CounterUp from "../CounterUp/CounterUp";
 import Team from "../Team/Team";
+import Loader from "../../shared/Loader/Loader";
 const GalleryPreview = lazy(() => import("../Gallery/Gallery"));
 
 const Home = () => {
@@ -14,12 +15,11 @@ const Home = () => {
       <Carousel></Carousel>
       <ServiceCard></ServiceCard>
       <About></About>
-      <Suspense fallback={<>Loding</>}>
+      <Suspense fallback={<Loader />}>
         <GalleryPreview />
       </Suspense>
       <TabSection></TabSection>
       <CounterUp></CounterUp>
-
       <Team></Team>
     </div>
   );
