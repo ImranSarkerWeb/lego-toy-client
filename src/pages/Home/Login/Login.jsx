@@ -1,31 +1,32 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-// import { AuthContex } from "../../providers/AuthProvider";
+
 import { FaGithub, FaGoogle } from "react-icons/fa";
+import { AuthContext } from "../../../providers/AuthProvider";
 // import Loader from "../shared/Loader";
 
 const Login = () => {
-  //   const { signIn, googleSignIn, githubSignIn } = useContext(AuthContex);
-  //   const [error, setError] = useState("");
-  //   const navigate = useNavigate();
+  const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  // const navigate = useNavigate();
   //   const location = useLocation();
   //   const from = location?.state?.from?.pathname || "/";
 
   const handleSignIn = (e) => {
     e.preventDefault();
-    // const email = e.target.email.value;
-    // const password = e.target.password.value;
-    // setError("");
-    // signIn(email, password)
-    //   .then((result) => {
-    //     const loggedUser = result.user;
-    //     navigate(from, { replace: true });
-    //   })
-    //   .catch((error) => {
-    //     console.log(error.message);
-    //     setError(error.message);
-    //   });
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    setError("");
+    signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        // navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error.message);
+        setError(error.message);
+      });
   };
 
   return (
@@ -50,7 +51,7 @@ const Login = () => {
             className="input input-bordered input-accent input-md w-full max-w-xs"
           />
         </div>
-        {/* {error && <p className="text-red-600">{error}</p>} */}
+        {error && <p className="text-red-600">{error}</p>}
         <button className="btn w-full btn-accent max-w-xs mt-4">Login</button>
       </form>
       <p className="mt-4">
@@ -64,14 +65,14 @@ const Login = () => {
       <div className="divider w-full max-w-xs mx-auto my-8">OR</div>
       <div>
         <button
-          //   onClick={googleSignIn}
+          onClick={googleSignIn}
           className="btn btn-outline btn-accent mb-4  w-full max-w-xs"
         >
           <FaGoogle className="me-2 text-amber-400" /> Login With Google
         </button>{" "}
         <br />
         <button
-          //   onClick={githubSignIn}
+          onClick={githubSignIn}
           className="btn btn-outline btn-accent w-full max-w-xs"
         >
           <FaGithub className="me-2 text-black" /> Login With Github

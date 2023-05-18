@@ -6,7 +6,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, googleSignIn, githubSignIn } = useContext(AuthContext);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
 
@@ -104,7 +104,7 @@ const Register = () => {
       <div className="divider w-full max-w-xs mx-auto my-8">OR</div>
       <div>
         <button
-          //   onClick={googleSignIn}
+          onClick={googleSignIn}
           className="btn btn-outline btn-accent mb-4 w-full max-w-xs "
         >
           <FaGoogle className="me-2 text-amber-400" />
@@ -112,7 +112,7 @@ const Register = () => {
         </button>{" "}
         <br />
         <button
-          //   onClick={githubSignIn}
+          onClick={githubSignIn}
           className="btn btn-outline btn-accent w-full max-w-xs"
         >
           <FaGithub className="me-2 text-black" /> Sign Up Login With Github
