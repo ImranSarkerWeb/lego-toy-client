@@ -1,0 +1,22 @@
+[
+    {
+    "id": 1,
+    "question": "What is an access token and refresh token? How do they work and where should we store them on the client-side?",
+    "answer": "Access Token: An access token is a credential that is issued to a user after they successfully authenticate and authorize themselves. It represents the user's identity and permissions within a system. Access tokens are typically short-lived and have an expiration time. They are used to access protected resources on the server.Refresh Token: A refresh token is a long-lived credential that is also issued to a user during the authentication process. Unlike access tokens, refresh tokens are used to obtain new access tokens when the current one expires. Refresh tokens are usually stored securely on the client-side and are sent to the server to request a new access token."
+    },
+    {
+    "id": 2,
+    "question": "Compare SQL and NoSQL databases?",
+    "answer": "SQL Databases:\n1. Use a structured schema. \n2. Scale vertically. \n3. Have a fixed schema.\n4. Use SQL as the query language.\n5. Prioritize data consistency.\n6 Suitable for structured data and complex relationships.\n NoSQL Databases:\n1. Have a flexible data model. \n2. Scale horizontally.\n3. Have a flexible schema.\n4. Use various query languages.\n5. Prioritize scalability and performance.\n6.Suitable for unstructured or semi-structured data, real-time applications, and high scalability needs.Both types of databases have their own strengths and use cases, so the choice depends on the specific requirements of the application."
+    },
+    {
+    "id": 3,
+    "question": "What is express js? What is Nest JS (google it)?",
+    "answer": "Express.js is a minimalistic and flexible web application framework for Node.js. It provides a set of features and utilities for building web applications and APIs. Express.js simplifies the process of handling HTTP requests, routing, middleware integration, and serving static files. It allows developers to create server-side applications in JavaScript with ease, making it popular for building lightweight and scalable web servers.\nNestJS, on the other hand, is a powerful and opinionated framework for building scalable and maintainable server-side applications. It is built on top of Node.js and utilizes TypeScript for development. NestJS follows the modular design pattern and is heavily inspired by Angular, providing decorators, dependency injection, and a familiar structure to build robust applications. It focuses on developer productivity, code organization, and extensibility. NestJS integrates well with various tools and libraries, making it suitable for building complex enterprise-grade applications with ease.."
+    },
+    {
+    "id": 4,
+    "question": "What is MongoDB aggregate and how does it work (google it)?",
+    "answer": "The MongoDB aggregate framework allows you to perform advanced data processing and aggregation operations on collections of documents. It works by defining a pipeline of stages, each representing a specific operation, and passing the results from one stage to the next. The framework provides operators for filtering, grouping, projecting, sorting, and more. The result is a set of aggregated documents based on the defined pipeline stages.."
+    }
+    ]
