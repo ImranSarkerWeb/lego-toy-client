@@ -2,12 +2,12 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-import { FaGithub, FaGoogle } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../../providers/AuthProvider";
 // import Loader from "../shared/Loader";
 
 const Login = () => {
-  const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
+  const { signIn, googleSignIn } = useContext(AuthContext);
   const [error, setError] = useState("");
   // const navigate = useNavigate();
   //   const location = useLocation();
@@ -70,13 +70,6 @@ const Login = () => {
         >
           <FaGoogle className="me-2 text-amber-400" /> Login With Google
         </button>{" "}
-        <br />
-        <button
-          onClick={githubSignIn}
-          className="btn btn-outline btn-accent w-full max-w-xs"
-        >
-          <FaGithub className="me-2 text-black" /> Login With Github
-        </button>
       </div>
     </div>
   );

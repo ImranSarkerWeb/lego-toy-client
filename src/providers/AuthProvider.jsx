@@ -45,9 +45,13 @@ const AuthProvider = ({ children }) => {
     }
   };
   const githubSignIn = async () => {
+    gitHubProvider.addScope("user:email");
+
     try {
       const result = await signInWithPopup(auth, gitHubProvider);
       const githubUser = result.user;
+      const email = result.user.email;
+      console.log(email);
       console.log("user created using github", githubUser);
     } catch (error) {
       console.log(error.message);

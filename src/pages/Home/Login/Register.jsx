@@ -1,12 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { updateProfile } from "firebase/auth";
-import { FaGithub, FaGoogle } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Register = () => {
-  const { createUser, googleSignIn, githubSignIn } = useContext(AuthContext);
+  const { createUser, googleSignIn } = useContext(AuthContext);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
 
@@ -27,13 +26,6 @@ const Register = () => {
       .then((result) => {
         const createdUser = result.user;
         setSuccess("User has been created successfully.");
-        updateUserProfile(result.user, name, photo)
-          .then(() => {
-            console.log("user profile updated");
-          })
-          .catch((error) => {
-            console.log(error.message);
-          });
         form.reset();
       })
       .catch((error) => {
@@ -41,12 +33,7 @@ const Register = () => {
         setError(error.message);
       });
   };
-  const updateUserProfile = (user, name, photo) => {
-    return updateProfile(user, {
-      displayName: name,
-      photoURL: photo,
-    });
-  };
+
   return (
     <div className="text-center my-8">
       <h2 className="text-4xl my-8">Please Register!</h2>
@@ -110,13 +97,6 @@ const Register = () => {
           <FaGoogle className="me-2 text-amber-400" />
           Sign Up With Google
         </button>{" "}
-        <br />
-        <button
-          onClick={githubSignIn}
-          className="btn btn-outline btn-accent w-full max-w-xs"
-        >
-          <FaGithub className="me-2 text-black" /> Sign Up Login With Github
-        </button>
       </div>
     </div>
   );
