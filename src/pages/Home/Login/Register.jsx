@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../../providers/AuthProvider";
 import useTitle from "../../../hooks/useTitle";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   useTitle("Register ");
@@ -28,6 +29,13 @@ const Register = () => {
       .then((result) => {
         const createdUser = result.user;
         setSuccess("User has been created successfully.");
+        updateUserProfile(result.user, name, photo)
+          .then(() => {
+            console.log("user profile updated");
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
         form.reset();
       })
       .catch((error) => {
@@ -35,7 +43,12 @@ const Register = () => {
         setError(error.message);
       });
   };
-
+  const updateUserProfile = (user, name, photo) => {
+    return updateProfile(user, {
+      displayName: name,
+      photoURL: photo,
+    });
+  };
   return (
     <div className="text-center my-8">
       <h2 className="text-4xl my-8">Please Register!</h2>

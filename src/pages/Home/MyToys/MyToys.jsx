@@ -8,7 +8,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 const MyToys = () => {
   useTitle("My Toys");
   const { user } = useContext(AuthContext);
-  const [myToys, setMyToys] = useState();
+  const [myToys, setMyToys] = useState([]);
   const email = user?.email;
 
   const handleDelete = (id) => {
@@ -47,7 +47,7 @@ const MyToys = () => {
   }, [email]);
   return (
     <div>
-      {myToys?.length ? (
+      {myToys.length ? (
         <div className="overflow-x-auto w-full">
           <table className="table w-full">
             {/* head */}
