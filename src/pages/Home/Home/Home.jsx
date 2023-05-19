@@ -7,9 +7,11 @@ import TabSection from "../TabSection/TabSection";
 import CounterUp from "../CounterUp/CounterUp";
 import Team from "../Team/Team";
 import Loader from "../../shared/Loader/Loader";
+import useTitle from "../../../hooks/useTitle";
 const GalleryPreview = lazy(() => import("../Gallery/Gallery"));
 
 const Home = () => {
+  useTitle("Home");
   return (
     <div>
       <Carousel></Carousel>

@@ -1,7 +1,9 @@
 import { useLoaderData } from "react-router-dom";
 import ReactStarsRating from "react-awesome-stars-rating";
+import useTitle from "../../../hooks/useTitle";
 
 const ToyDetails = () => {
+  useTitle("Toy Details ");
   const toy = useLoaderData();
   const {
     toyName,

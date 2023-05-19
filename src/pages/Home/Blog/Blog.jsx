@@ -3,8 +3,10 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import React from "react";
 
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../../hooks/useTitle";
 
 const Blog = () => {
+  useTitle("Blog");
   const questions = useLoaderData();
   // https://assets4.lottiefiles.com/packages/lf20_4sabgt2r.json
 

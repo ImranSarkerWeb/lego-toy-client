@@ -1,8 +1,10 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { Player } from "@lottiefiles/react-lottie-player";
+import useTitle from "../../../hooks/useTitle";
 
 const AddToy = () => {
+  useTitle("Add Your Toy");
   const { user } = useContext(AuthContext);
   const [category, setCategory] = useState("");
   const handleSelectChange = (event) => {

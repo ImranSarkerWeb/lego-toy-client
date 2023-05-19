@@ -1,10 +1,12 @@
 import { useLoaderData } from "react-router-dom";
 import ToyRow from "./toyRow";
+import useTitle from "../../../hooks/useTitle";
 
 // import { useState, useContext } from "react";
 // import { AuthContext } from "../../../providers/AuthProvider";
 
 const AllToys = () => {
+  useTitle("All Toys");
   //   const { user } = useContext(AuthContext);
 
   const toys = useLoaderData();

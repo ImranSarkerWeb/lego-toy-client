@@ -4,8 +4,10 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Player } from "@lottiefiles/react-lottie-player";
+import useTitle from "../../../hooks/useTitle";
 
 const UpdateMyToy = () => {
+  useTitle("Update My Toy");
   const { user } = useContext(AuthContext);
   // https://assets3.lottiefiles.com/private_files/lf30_rzhdjuoe.json
   const [toy, setToy] = useState({});
