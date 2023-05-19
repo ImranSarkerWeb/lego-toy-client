@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import ReactStarsRating from "react-awesome-stars-rating";
+import { Link } from "react-router-dom";
 
 const Tab2 = () => {
-  const [legoBrick, setLegoRobot] = useState([]);
+  const [legoBrick, setLegoBrick] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/categorytoys/Brick")
       .then((res) => res.json())
-      .then((data) => setLegoRobot(data));
+      .then((data) => setLegoBrick(data));
   }, []);
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -33,14 +34,17 @@ const Tab2 = () => {
                   <ReactStarsRating
                     className="flex"
                     isEdit={false}
-                    value={brick?.rating}
+                    value={parseFloat(brick?.rating)}
                   />
                 </p>
 
                 <div className="card-actions justify-end mt-6">
-                  <button className="btn btn-xs btn-accent">
+                  <Link
+                    to={`../toys/${brick._id}`}
+                    className="btn btn-xs btn-accent"
+                  >
                     View Details
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

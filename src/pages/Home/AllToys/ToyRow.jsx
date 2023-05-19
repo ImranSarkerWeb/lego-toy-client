@@ -6,7 +6,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
-const ToyRow = ({ toy, handleViewDetails }) => {
+const ToyRow = ({ toy }) => {
   const { user } = useContext(AuthContext);
   const {
     _id,
@@ -40,19 +40,9 @@ const ToyRow = ({ toy, handleViewDetails }) => {
       <td>${price}</td>
       <td>{qty}</td>
       <th>
-        {user ? (
-          <button
-            onClick={() => handleViewDetails(_id)}
-            className="btn btn-ghost btn-xs"
-          >
-            View details
-          </button>
-        ) : (
-          <Link className="btn btn-ghost btn-xs" to="/login">
-            {" "}
-            View details{" "}
-          </Link>
-        )}
+        <Link to={`../toys/${_id}`} className="btn btn-ghost btn-xs">
+          View details
+        </Link>
       </th>
     </tr>
   );

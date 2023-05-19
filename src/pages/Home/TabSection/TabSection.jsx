@@ -2,6 +2,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import Tab1 from "./Tab1";
 import Tab2 from "./Tab2";
+import Tab3 from "./Tab3";
 
 const TabSection = () => {
   return (
@@ -47,7 +48,7 @@ const TabSection = () => {
         <Tab2></Tab2>
       </TabPanel>
       <TabPanel>
-        <h2>Any content 3</h2>
+        <Tab3></Tab3>
       </TabPanel>
     </Tabs>
   );
