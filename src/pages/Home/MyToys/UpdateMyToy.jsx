@@ -1,9 +1,25 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const AddToy = () => {
+const UpdateMyToy = () => {
   const { user } = useContext(AuthContext);
   const [category, setCategory] = useState("");
+  const [toy, setToy] = useState({});
+  const {
+    toyName,
+    photo,
+    sellerEmail,
+    sellerName,
+    rating,
+    price,
+    category: categoryName,
+    desciption,
+    qty,
+  } = toy;
+  const { id } = useParams();
+
   const handleSelectChange = (event) => {
     setCategory(event.target.value);
   };
@@ -18,7 +34,7 @@ const AddToy = () => {
     const price = form.price.value;
     const desciption = form.desciption.value;
     const qty = form.qty.value;
-    const toyInfo = {
+    const toyUpdateInfo = {
       toyName,
       photo,
       sellerEmail,
@@ -30,18 +46,26 @@ const AddToy = () => {
       qty,
     };
 
-    console.log(toyInfo);
-
-    fetch("http://localhost:5000/toys", {
-      method: "POST",
+    fetch(`http://localhost:5000/toys/${id}`, {
+      method: "PATCH",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(toyInfo),
+      body: JSON.stringify(toyUpdateInfo),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire("Good job!", "You have updated the toy!", "success");
+        }
+      });
   };
+  useEffect(() => {
+    fetch(`http://localhost:5000/toys/${id}`)
+      .then((res) => res.json())
+      .then((data) => setToy(data));
+  }, [id]);
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="w-full max-w-6xl card shadow-2xl bg-base-100">
@@ -56,6 +80,7 @@ const AddToy = () => {
                   type="text"
                   required
                   name="toyname"
+                  defaultValue={toyName}
                   placeholder="Type your toy name"
                   className="w-full input input-accent input-bordered"
                 />
@@ -65,8 +90,10 @@ const AddToy = () => {
                   <span className="label-text">Toy Photo Url</span>
                 </label>
                 <input
+                  disabled
                   type="text"
                   required
+                  defaultValue={photo}
                   name="photo"
                   placeholder="Photo URL"
                   className="w-full input input-accent input-bordered"
@@ -182,7 +209,11 @@ const AddToy = () => {
             </div>
 
             <div className="form-control mt-6">
-              <input type="submit" value="Add Now" className="btn btn-accent" />
+              <input
+                type="submit"
+                value="Update Now"
+                className="btn btn-accent"
+              />
             </div>
           </form>
         </div>
@@ -191,4 +222,4 @@ const AddToy = () => {
   );
 };
 
-export default AddToy;
+export default UpdateMyToy;

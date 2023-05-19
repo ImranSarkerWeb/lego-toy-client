@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
 // eslint-disable-next-line react/prop-types
-const MyToysRow = ({ toy, handleDelete }) => {
+const MyToysRow = ({ toy, handleDelete, handleUpdate }) => {
   const { user } = useContext(AuthContext);
   const {
     _id,
@@ -41,9 +41,12 @@ const MyToysRow = ({ toy, handleDelete }) => {
       <td>${price}</td>
       <td>{qty}</td>
       <th>
-        <button className="btn text-white btn-accent btn-xl mr-4">
-          <FaEdit />
-        </button>
+        <Link to={`/updatemytoy/${_id}`}>
+          <button className="btn text-white btn-accent btn-xl mr-4">
+            <FaEdit />
+          </button>
+        </Link>
+
         <button
           onClick={() => handleDelete(_id)}
           className="btn text-white btn-error btn-xl mr-4"
