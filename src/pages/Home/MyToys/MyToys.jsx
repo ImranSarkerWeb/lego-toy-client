@@ -3,6 +3,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import MyToysRow from "./MyToysRow";
 import Swal from "sweetalert2";
 import useTitle from "../../../hooks/useTitle";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 const MyToys = () => {
   useTitle("My Toys");
@@ -46,37 +47,49 @@ const MyToys = () => {
   }, [email]);
   return (
     <div>
-      <div className="overflow-x-auto w-full">
-        <table className="table w-full">
-          {/* head */}
-          <thead>
-            <tr>
-              <th className="text-center">Thumb</th>
+      {myToys?.length ? (
+        <div className="overflow-x-auto w-full">
+          <table className="table w-full">
+            {/* head */}
+            <thead>
+              <tr>
+                <th className="text-center">Thumb</th>
 
-              <th>Toy Name</th>
-              <th>Seller</th>
-              <th>Sub-Category</th>
-              <th>Price</th>
-              <th>
-                Available <br /> Quantity
-              </th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* rows */}
-            {myToys &&
-              myToys.map((toy) => (
-                <MyToysRow
-                  key={toy._id}
-                  toy={toy}
-                  handleDelete={handleDelete}
-                  handleUpdate={handleUpdate}
-                ></MyToysRow>
-              ))}
-          </tbody>
-        </table>
-      </div>
+                <th>Toy Name</th>
+                <th>Seller</th>
+                <th>Sub-Category</th>
+                <th>Price</th>
+                <th>
+                  Available <br /> Quantity
+                </th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {/* rows */}
+              {myToys &&
+                myToys.map((toy) => (
+                  <MyToysRow
+                    key={toy._id}
+                    toy={toy}
+                    handleDelete={handleDelete}
+                    handleUpdate={handleUpdate}
+                  ></MyToysRow>
+                ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <div>
+          <Player
+            autoplay
+            loop
+            src="https://assets8.lottiefiles.com/packages/lf20_rdjfuniz.json"
+            style={{ height: "400px", width: "400px" }}
+          ></Player>
+          <h2 className="text-4xl text-center my-6">Please Add Some toys</h2>
+        </div>
+      )}
     </div>
   );
 };
