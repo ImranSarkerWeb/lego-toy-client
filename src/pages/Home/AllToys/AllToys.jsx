@@ -8,14 +8,13 @@ const AllToys = () => {
   //   const { user } = useContext(AuthContext);
 
   const toys = useLoaderData();
-  const handleViewDetails = (id) => {
-    fetch(`http://localhost:5000/toys/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        alert(data._id);
-      });
-  };
+  // const handleViewDetails = (id) => {
+  //   fetch(`http://localhost:5000/toys/${id}`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //     });
+  // };
 
   return (
     <div>
@@ -61,13 +60,7 @@ const AllToys = () => {
             {toys &&
               toys
                 .slice(0, 20)
-                .map((toy) => (
-                  <ToyRow
-                    key={toy._id}
-                    toy={toy}
-                    handleViewDetails={handleViewDetails}
-                  ></ToyRow>
-                ))}
+                .map((toy) => <ToyRow key={toy._id} toy={toy}></ToyRow>)}
           </tbody>
         </table>
       </div>

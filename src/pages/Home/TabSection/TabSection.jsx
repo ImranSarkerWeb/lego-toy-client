@@ -1,5 +1,7 @@
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import Tab1 from "./Tab1";
+import Tab2 from "./Tab2";
 
 const TabSection = () => {
   return (
@@ -39,10 +41,10 @@ const TabSection = () => {
         </Tab>
       </TabList>
       <TabPanel>
-        <h2>Any content 1</h2>
+        <Tab1></Tab1>
       </TabPanel>
       <TabPanel>
-        <h2>Any content 2</h2>
+        <Tab2></Tab2>
       </TabPanel>
       <TabPanel>
         <h2>Any content 3</h2>

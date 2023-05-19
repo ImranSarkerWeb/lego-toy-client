@@ -7,7 +7,7 @@ import ScrollTrigger from "react-scroll-trigger";
 const CounterUp = () => {
   const [counterUp, setCounterUp] = useState(false);
   return (
-    <div className="w-[90%] mx-auto my-10 flex flex-col md:flex-row gap-0 bg-accent">
+    <div className="w-[90%] mx-auto mt-28 mb-10 flex flex-col md:flex-row gap-0 bg-accent">
       <div className="card rounded-none w-full bg-accent shadow-xl">
         <ScrollTrigger
           onEnter={() => setCounterUp(true)}
