@@ -23,7 +23,9 @@ const Tab1 = () => {
                 <img src={robot.photo} alt={robot.toyName} />
               </figure>
               <div className="card-body">
-                <h2 className="card-title">{robot.toyName}</h2>
+                <h2 className="card-title mx-auto text-center">
+                  {robot.toyName}
+                </h2>
                 <h1 className="badge badge-success mx-auto my-3 p-4 text-lg">
                   Price: ${robot.price}
                 </h1>
