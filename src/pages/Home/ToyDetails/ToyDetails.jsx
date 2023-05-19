@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import ReactStarsRating from "react-awesome-stars-rating";
 import useTitle from "../../../hooks/useTitle";
+import { useEffect } from "react";
 
 const ToyDetails = () => {
   useTitle("Toy Details ");
@@ -15,6 +16,10 @@ const ToyDetails = () => {
     qty,
     price,
   } = toy;
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="card my-20 lg:card-side bg-base-100 shadow-xl">
       <figure className="md:w-1/2 mx-auto">

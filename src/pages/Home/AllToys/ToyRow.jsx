@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const ToyRow = ({ toy }) => {
-  const { user } = useContext(AuthContext);
+  const { user, notify } = useContext(AuthContext);
   const {
     _id,
     toyName,
@@ -40,9 +40,15 @@ const ToyRow = ({ toy }) => {
       <td>${price}</td>
       <td>{qty}</td>
       <th>
-        <Link to={`../toys/${_id}`} className="btn btn-ghost btn-xs">
-          View details
-        </Link>
+        {user ? (
+          <Link to={`../toys/${_id}`} className="btn btn-xs ">
+            View Details
+          </Link>
+        ) : (
+          <Link onClick={notify} to={`../toys/${_id}`} className="btn btn-xs ">
+            View Details
+          </Link>
+        )}
       </th>
     </tr>
   );

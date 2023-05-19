@@ -37,6 +37,7 @@ const Login = () => {
       <form onSubmit={handleSignIn}>
         <div>
           <input
+            autoComplete="username"
             type="email"
             placeholder="Your Email"
             required
@@ -48,6 +49,7 @@ const Login = () => {
           <input
             type="password"
             required
+            autoComplete="current-password"
             name="password"
             placeholder="Password"
             className="input input-bordered input-accent input-md w-full max-w-xs"

@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ReactStarsRating from "react-awesome-stars-rating";
 import { Link } from "react-router-dom";
 
+import { AuthContext } from "../../../providers/AuthProvider";
+
 const Tab1 = () => {
+  const { user, notify } = useContext(AuthContext);
   const [legoRobot, setLegoRobot] = useState([]);
 
   useEffect(() => {
@@ -10,6 +13,7 @@ const Tab1 = () => {
       .then((res) => res.json())
       .then((data) => setLegoRobot(data));
   }, []);
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {legoRobot &&
@@ -39,12 +43,22 @@ const Tab1 = () => {
                 </p>
 
                 <div className="card-actions justify-end mt-6">
-                  <Link
-                    to={`../toys/${robot._id}`}
-                    className="btn btn-xs btn-accent"
-                  >
-                    View Details
-                  </Link>
+                  {user ? (
+                    <Link
+                      to={`../toys/${robot._id}`}
+                      className="btn btn-xs btn-accent"
+                    >
+                      View Details
+                    </Link>
+                  ) : (
+                    <Link
+                      onClick={notify}
+                      to={`../toys/${robot._id}`}
+                      className="btn btn-xs btn-accent"
+                    >
+                      View Details
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>

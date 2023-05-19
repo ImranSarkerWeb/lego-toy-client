@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ReactStarsRating from "react-awesome-stars-rating";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Tab2 = () => {
   const [legoBrick, setLegoBrick] = useState([]);
+  const { user, notify } = useContext(AuthContext);
 
   useEffect(() => {
     fetch("http://localhost:5000/categorytoys/Brick")
@@ -39,12 +41,22 @@ const Tab2 = () => {
                 </p>
 
                 <div className="card-actions justify-end mt-6">
-                  <Link
-                    to={`../toys/${brick._id}`}
-                    className="btn btn-xs btn-accent"
-                  >
-                    View Details
-                  </Link>
+                  {user ? (
+                    <Link
+                      to={`../toys/${brick._id}`}
+                      className="btn btn-xs btn-accent"
+                    >
+                      View Details
+                    </Link>
+                  ) : (
+                    <Link
+                      onClick={notify}
+                      to={`../toys/${brick._id}`}
+                      className="btn btn-xs btn-accent"
+                    >
+                      View Details
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>

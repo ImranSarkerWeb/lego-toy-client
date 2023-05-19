@@ -14,7 +14,6 @@ const Gallery = () => {
   }, []);
 
   const { toys } = legoItem;
-  console.log(toys);
   return (
     <div className="my-10 pb-5 ">
       <div className="text-center mb-12">

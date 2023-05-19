@@ -12,6 +12,7 @@ import {
   signOut,
 } from "firebase/auth";
 import app from "../../firebase.config";
+import { toast } from "react-toastify";
 export const AuthContext = createContext(null);
 
 const auth = getAuth(app);
@@ -21,7 +22,17 @@ const gitHubProvider = new GithubAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const notify = () =>
+    toast.warn("🦄 Please Login!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -77,6 +88,7 @@ const AuthProvider = ({ children }) => {
     logOut,
     googleSignIn,
     githubSignIn,
+    notify,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

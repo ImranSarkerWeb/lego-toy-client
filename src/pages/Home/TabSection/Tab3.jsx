@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ReactStarsRating from "react-awesome-stars-rating";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Tab3 = () => {
+  const { user, notify } = useContext(AuthContext);
   const [legoDoll, setLegoDoll] = useState([]);
 
   useEffect(() => {
@@ -39,12 +41,22 @@ const Tab3 = () => {
                 </p>
 
                 <div className="card-actions justify-end mt-6">
-                  <Link
-                    to={`../toys/${doll._id}`}
-                    className="btn btn-xs btn-accent"
-                  >
-                    View Details
-                  </Link>
+                  {user ? (
+                    <Link
+                      to={`../toys/${doll._id}`}
+                      className="btn btn-xs btn-accent"
+                    >
+                      View Details
+                    </Link>
+                  ) : (
+                    <Link
+                      onClick={notify}
+                      to={`../toys/${doll._id}`}
+                      className="btn btn-xs btn-accent"
+                    >
+                      View Details
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
