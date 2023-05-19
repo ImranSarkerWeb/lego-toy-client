@@ -31,8 +31,6 @@ const AddToy = () => {
       qty,
     };
 
-    console.log(toyInfo);
-
     fetch("http://localhost:5000/toys", {
       method: "POST",
       headers: {
@@ -41,7 +39,10 @@ const AddToy = () => {
       body: JSON.stringify(toyInfo),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        form.reset();
+      });
   };
   return (
     <div>

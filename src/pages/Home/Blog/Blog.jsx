@@ -1,15 +1,22 @@
 /* eslint-disable no-unused-vars */
+import { Player } from "@lottiefiles/react-lottie-player";
 import React from "react";
 
 import { useLoaderData } from "react-router-dom";
 
 const Blog = () => {
   const questions = useLoaderData();
-  console.log(questions);
+  // https://assets4.lottiefiles.com/packages/lf20_4sabgt2r.json
 
   return (
     <>
-      <div className="w-[90%] mx-auto my-10">
+      <div className="w-[90%] mx-auto mb-10">
+        <Player
+          autoplay
+          loop
+          src="https://assets4.lottiefiles.com/packages/lf20_4sabgt2r.json"
+          style={{ height: "300px", width: "300px" }}
+        ></Player>
         {questions.map((question) => {
           return (
             <div
