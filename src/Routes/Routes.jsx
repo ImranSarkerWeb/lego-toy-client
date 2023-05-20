@@ -25,7 +25,8 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
-        loader: () => fetch("/blogQuestion.json"),
+        loader: () =>
+          fetch("https://lego-store-server.vercel.app/questionanswers"),
       },
       {
         path: "/login",

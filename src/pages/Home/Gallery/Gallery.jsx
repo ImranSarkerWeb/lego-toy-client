@@ -5,12 +5,12 @@ import "aos/dist/aos.css"; // Import the AOS CSS file
 import GalleryCard from "./GalleryCard";
 
 const Gallery = () => {
-  const [legoItem, setLegoItem] = useState({});
+  const [legoItems, setLegoItems] = useState([]);
 
   useEffect(() => {
-    fetch("/lego.json")
+    fetch("https://lego-store-server.vercel.app/legosinfo")
       .then((res) => res.json())
-      .then((data) => setLegoItem(data))
+      .then((data) => setLegoItems(data))
       .catch((error) => console.error(error.message));
   }, []);
 
@@ -30,7 +30,6 @@ const Gallery = () => {
     };
   }, []);
 
-  const { toys } = legoItem;
   return (
     <div className="my-10 pb-5 ">
       <div
@@ -45,8 +44,8 @@ const Gallery = () => {
         </h3>
       </div>
       <div className="w-[90%]  overflow-hidden h-full mx-auto grid md:grid-cols-4 gap-4">
-        {toys &&
-          toys.map((toy) => (
+        {legoItems.length &&
+          legoItems.map((toy) => (
             <GalleryCard key={toy._id} toy={toy}></GalleryCard>
           ))}
       </div>

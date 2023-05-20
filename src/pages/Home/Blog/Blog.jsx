@@ -22,7 +22,7 @@ const Blog = () => {
         {questions.map((question) => {
           return (
             <div
-              key={question.id}
+              key={question._id}
               tabIndex={0}
               className="collapse my-4 collapse-arrow border border-base-300 bg-base-100 rounded-box"
             >
