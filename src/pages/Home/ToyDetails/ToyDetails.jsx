@@ -29,10 +29,10 @@ const ToyDetails = () => {
         <h2 className="card-title text-4xl mb-6 mx-auto">{toyName}</h2>
 
         <div className="flex justify-between">
-          <h1 className="badge badge-success  my-3 p-4 text-lg">
+          <h1 className="badge badge-success  my-3 p-4 md:text-lg">
             Price: ${price}
           </h1>
-          <h1 className="badge badge-ghost  my-3 p-4 text-lg">
+          <h1 className="badge badge-ghost  my-3 p-4 md:text-lg">
             Quantity: {qty} pc(s)
           </h1>
         </div>

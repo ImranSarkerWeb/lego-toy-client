@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
-import Home from "../pages/Home/Home/Home";
+// import Home from "../pages/Home/Home/Home";
 
 import ErrorPage from "../pages/Home/ErrorPage/ErrorPage";
 // import Blog from "../pages/Home/Blog/Blog";
@@ -18,6 +18,7 @@ const AllToysPreview = lazy(() => import("../pages/Home/AllToys/AllToys"));
 
 const LoginPreview = lazy(() => import("../pages/Home/Login/Login"));
 const RegisterPreview = lazy(() => import("../pages/Home/Login/Register"));
+const HomePreview = lazy(() => import("../pages/Home/Home/Home"));
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <HomePreview />
+          </Suspense>
+        ),
       },
       {
         path: "/blog",

@@ -34,7 +34,7 @@ const AllToys = () => {
   };
   return (
     <div>
-      <div className="md:flex justify-between">
+      <div className="md:flex mx-auto justify-between">
         {" "}
         <h1 className="font-bold my-4">
           {" "}
