@@ -20,4 +20,4 @@ The website includes a blog section where LEGO enthusiasts can read and contribu
 
 The website provides user registration and login functionality using React, Firebase, and Express. Users can create an account with a unique username and password to access personalized features, such as the "My Toys" page, adding toys, and participating in the blog section.
 
-# The website link [legoStore](www.fb.com)
+# The website link [legoStore](https://lego-toys.web.app/)

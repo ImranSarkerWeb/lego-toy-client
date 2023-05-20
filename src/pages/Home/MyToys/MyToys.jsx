@@ -22,7 +22,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/toys/${id}`, {
+        fetch(`https://lego-store-server.vercel.app/toys/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -38,7 +38,7 @@ const MyToys = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/mytoys?email=${email}`)
+    fetch(`https://lego-store-server.vercel.app/mytoys?email=${email}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
   }, [email]);

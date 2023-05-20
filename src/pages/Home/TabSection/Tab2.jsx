@@ -8,7 +8,7 @@ const Tab2 = () => {
   const { user, notify } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch("http://localhost:5000/categorytoys/Brick")
+    fetch("https://lego-store-server.vercel.app/categorytoys/Brick")
       .then((res) => res.json())
       .then((data) => setLegoBrick(data));
   }, []);

@@ -11,7 +11,7 @@ const AllToys = () => {
 
   const toys = useLoaderData();
   // const handleViewDetails = (id) => {
-  //   fetch(`http://localhost:5000/toys/${id}`)
+  //   fetch(`https://lego-store-server.vercel.app/toys/${id}`)
   //     .then((res) => res.json())
   //     .then((data) => {
   //       console.log(data);

@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       {
         path: "/alltoys",
         element: <AllToys />,
-        loader: () => fetch("http://localhost:5000/toys"),
+        loader: () => fetch("https://lego-store-server.vercel.app/toys"),
       },
       {
         path: "/addtoy",
@@ -64,7 +64,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/updatemytoy/${params.id}`),
+          fetch(
+            `https://lego-store-server.vercel.app/updatemytoy/${params.id}`
+          ),
       },
       {
         path: "toys/:id",
@@ -74,7 +76,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/toys/${params.id}`),
+          fetch(`https://lego-store-server.vercel.app/toys/${params.id}`),
       },
     ],
   },

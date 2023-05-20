@@ -8,7 +8,7 @@ const Tab3 = () => {
   const [legoDoll, setLegoDoll] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/categorytoys/Doll")
+    fetch("https://lego-store-server.vercel.app/categorytoys/Doll")
       .then((res) => res.json())
       .then((data) => setLegoDoll(data));
   }, []);

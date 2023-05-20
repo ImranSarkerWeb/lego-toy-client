@@ -9,7 +9,7 @@ const Tab1 = () => {
   const [legoRobot, setLegoRobot] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/categorytoys/Robot")
+    fetch("https://lego-store-server.vercel.app/categorytoys/Robot")
       .then((res) => res.json())
       .then((data) => setLegoRobot(data));
   }, []);

@@ -26,7 +26,7 @@ const UpdateMyToy = () => {
       qty,
     };
 
-    fetch(`http://localhost:5000/toys/${id}`, {
+    fetch(`https://lego-store-server.vercel.app/toys/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -42,7 +42,7 @@ const UpdateMyToy = () => {
       });
   };
   useEffect(() => {
-    fetch(`http://localhost:5000/toys/${id}`)
+    fetch(`https://lego-store-server.vercel.app/toys/${id}`)
       .then((res) => res.json())
       .then((data) => setToy(data));
   }, [id]);
