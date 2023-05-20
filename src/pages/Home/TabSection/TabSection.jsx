@@ -1,12 +1,15 @@
+import { Suspense, lazy } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import Tab1 from "./Tab1";
-import Tab2 from "./Tab2";
-import Tab3 from "./Tab3";
+
+import Loader from "../../shared/Loader/Loader";
+const Tab1Preview = lazy(() => import("./Tab1"));
+const Tab2Preview = lazy(() => import("./Tab2"));
+const Tab3Preview = lazy(() => import("./Tab3"));
 
 const TabSection = () => {
   return (
-    <Tabs>
+    <Tabs className="min-h-screen">
       <div className="text-center">
         <h3 className="text-accent inline-block py-1 px-6  border-2 border-dashed border-accent font-bold text-xl">
           Category
@@ -42,13 +45,19 @@ const TabSection = () => {
         </Tab>
       </TabList>
       <TabPanel>
-        <Tab1></Tab1>
+        <Suspense fallback={<Loader />}>
+          <Tab1Preview />
+        </Suspense>
       </TabPanel>
       <TabPanel>
-        <Tab2></Tab2>
+        <Suspense fallback={<Loader />}>
+          <Tab2Preview />
+        </Suspense>
       </TabPanel>
       <TabPanel>
-        <Tab3></Tab3>
+        <Suspense fallback={<Loader />}>
+          <Tab3Preview />
+        </Suspense>
       </TabPanel>
     </Tabs>
   );

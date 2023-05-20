@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import lego from "../../../assets/logo/lego-logo.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
@@ -8,19 +8,45 @@ const NavBar = () => {
   const navTab = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        {" "}
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? "text-accent" : "")}
+        >
+          Home
+        </NavLink>
       </li>
       <li>
-        <Link to="/alltoys">All Toys</Link>
+        <NavLink
+          to="/alltoys"
+          className={({ isActive }) => (isActive ? "text-accent" : "")}
+        >
+          All Toys
+        </NavLink>
       </li>
       <li>
-        <Link to="/mytoys">My Toys</Link>
+        <NavLink
+          to="/mytoys"
+          className={({ isActive }) => (isActive ? "text-accent" : "")}
+        >
+          My Toys
+        </NavLink>
       </li>
       <li>
-        <Link to="/addtoy">Add A Toy</Link>
+        <NavLink
+          to="/addtoy"
+          className={({ isActive }) => (isActive ? "text-accent" : "")}
+        >
+          Add A Toy
+        </NavLink>
       </li>
       <li>
-        <Link to="/blog">Blog</Link>
+        <NavLink
+          to="/blog"
+          className={({ isActive }) => (isActive ? "text-accent" : "")}
+        >
+          Blog
+        </NavLink>
       </li>
     </>
   );
@@ -72,12 +98,12 @@ const NavBar = () => {
                 <img src={user.photoURL} />
               </div>
             </label>
-            <button onClick={logOut} className="btn btn-sm">
+            <button onClick={logOut} className="btn btn-sm btn-error">
               Log Out
             </button>
           </>
         ) : (
-          <button className="btn btn-sm">
+          <button className="btn btn-sm btn-accent">
             <Link to="/login">Login</Link>
           </button>
         )}

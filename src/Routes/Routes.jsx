@@ -1,13 +1,9 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
-// import Home from "../pages/Home/Home/Home";
-
 import ErrorPage from "../pages/Home/ErrorPage/ErrorPage";
-// import Blog from "../pages/Home/Blog/Blog";
 import AddToy from "../pages/Home/AddToy/AddToy";
 import PrivateRoute from "./PrivateRoute";
-// import AllToys from "../pages/Home/AllToys/AllToys";
 import MyToys from "../pages/Home/MyToys/MyToys";
 import UpdateMyToy from "../pages/Home/MyToys/UpdateMyToy";
 import ToyDetails from "../pages/Home/ToyDetails/ToyDetails";

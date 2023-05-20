@@ -13,11 +13,14 @@ const Tab3 = () => {
       .then((data) => setLegoDoll(data));
   }, []);
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="grid overflow-hidden py-4 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {legoDoll &&
         legoDoll.map((doll) => {
           return (
             <div
+              data-aos="fade-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1500"
               key={doll._id}
               className="card w-[95%] md:w-full mx-auto md:mx-0 glass"
             >

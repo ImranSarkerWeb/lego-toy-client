@@ -23,7 +23,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const notify = () =>
-    toast.warn("🦄 Please Login!", {
+    toast.warn("🦄 You have to log in first to view details!", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,

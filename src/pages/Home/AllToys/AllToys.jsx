@@ -3,26 +3,15 @@ import ToyRow from "./toyRow";
 import useTitle from "../../../hooks/useTitle";
 import { useEffect, useState } from "react";
 
-// import { useState, useContext } from "react";
-// import { AuthContext } from "../../../providers/AuthProvider";
-
 const AllToys = () => {
   useTitle("All Toys");
-  //   const { user } = useContext(AuthContext);
+
   const [toys, setToys] = useState([]);
   const loadedToys = useLoaderData();
   useEffect(() => {
     setToys(loadedToys);
   }, [loadedToys]);
-  // const handleViewDetails = (id) => {
-  //   fetch(`https://lego-store-server.vercel.app/toys/${id}`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //     });
-  // };
 
-  // http://localhost:5000/search?q=value
   const handleSearch = (event) => {
     event.preventDefault();
     const searchValue = event.target.search.value;

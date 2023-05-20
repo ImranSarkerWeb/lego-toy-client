@@ -1,25 +1,11 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { Link } from "react-router-dom";
 
-// eslint-disable-next-line react/prop-types
 const ToyRow = ({ toy }) => {
   const { user, notify } = useContext(AuthContext);
-  const {
-    _id,
-    toyName,
-    category,
-    photo,
-    sellerEmail,
-    sellerName,
-    rating,
-    desciption,
-    qty,
-    price,
-  } = toy;
+  const { _id, toyName, category, photo, sellerName, qty, price } = toy;
 
   return (
     <tr>
@@ -33,19 +19,42 @@ const ToyRow = ({ toy }) => {
         </div>
       </th>
       <td>
-        <div className="font-bold">{toyName}</div>
+        <div className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-900 to-pink-100 ">
+          {toyName}
+        </div>
       </td>
-      <td>{sellerName}</td>
-      <td>{category}</td>
-      <td>${price}</td>
-      <td>{qty}</td>
+      <td className="text-blue-500">{sellerName}</td>
+      <td>
+        {category == "Doll" ? (
+          <span className="text-emerald-800">{category}</span>
+        ) : category == "Brick" ? (
+          <span className="text-amber-800">{category}</span>
+        ) : (
+          <span className="text-fuchsia-900">{category}</span>
+        )}
+      </td>
+      <td>
+        <span className="bg-secondary rounded-lg text-base-100 p-[5px]">
+          ${price}
+        </span>{" "}
+      </td>
+      <td>
+        <span className="badge-ghost rounded-lg p-[6px]">{qty}</span>
+      </td>
       <th>
         {user ? (
-          <Link to={`../toys/${_id}`} className="btn btn-xs ">
+          <Link
+            to={`../toys/${_id}`}
+            className="btn btn-xs  btn-warning  transition-all duration-300 animate-pulse"
+          >
             View Details
           </Link>
         ) : (
-          <Link onClick={notify} to={`../toys/${_id}`} className="btn btn-xs ">
+          <Link
+            onClick={notify}
+            to={`../toys/${_id}`}
+            className="btn btn-xs btn-warning transition-all duration-300 animate-pulse"
+          >
             View Details
           </Link>
         )}
