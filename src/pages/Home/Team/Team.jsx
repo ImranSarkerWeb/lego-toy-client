@@ -13,7 +13,13 @@ const Team = () => {
 
       <div className="hero ">
         <div className="hero-content flex-col lg:flex-row">
-          <div className="flex flex-col md:flex-row items-center gap-8">
+          <div
+            data-aos="fade-right"
+            data-aos-anchor-placement="center-center"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1500"
+            className="flex flex-col md:flex-row items-center gap-8"
+          >
             <div className="md:w-1/3">
               <img
                 src="https://randomuser.me/api/portraits/men/75.jpg"
@@ -42,7 +48,13 @@ const Team = () => {
               </div>
             </div>
           </div>
-          <div className="flex mt-8 md:mt-0 flex-col md:flex-row items-center gap-8">
+          <div
+            data-aos="fade-left"
+            data-aos-anchor-placement="center-center"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1500"
+            className="flex mt-8 md:mt-0 flex-col md:flex-row items-center gap-8"
+          >
             <div className="md:w-1/3">
               <img
                 src="https://randomuser.me/api/portraits/women/66.jpg"

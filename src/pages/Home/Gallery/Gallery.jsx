@@ -44,7 +44,7 @@ const Gallery = () => {
           Lego Gallery
         </h3>
       </div>
-      <div className="w-[90%] h-screen overflow-hidden md:h-full mx-auto grid md:grid-cols-4 gap-4">
+      <div className="w-[90%]  overflow-hidden h-full mx-auto grid md:grid-cols-4 gap-4">
         {toys &&
           toys.map((toy) => (
             <GalleryCard key={toy._id} toy={toy}></GalleryCard>
