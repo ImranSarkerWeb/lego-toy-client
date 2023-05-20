@@ -17,7 +17,7 @@ const ServiceCard = () => {
         // data-aos-anchor-placement="center-center"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
-        className="card w-96 bg-base-100 shadow-xl"
+        className="card md:w-96 bg-base-100 shadow-xl"
       >
         <figure className="px-10 pt-10">
           {/* <img
@@ -44,7 +44,7 @@ const ServiceCard = () => {
         // data-aos-anchor-placement="center-center"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
-        className="card w-96 bg-base-100 shadow-xl"
+        className="card md:w-96 bg-base-100 shadow-xl"
       >
         <figure className="px-10 pt-10">
           {/* <img
@@ -72,7 +72,7 @@ const ServiceCard = () => {
         // data-aos-anchor-placement="center-center"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
-        className="card w-96 bg-base-100 shadow-xl"
+        className="card md:w-96 bg-base-100 shadow-xl"
       >
         <figure className="px-10 pt-10">
           {/* <img
