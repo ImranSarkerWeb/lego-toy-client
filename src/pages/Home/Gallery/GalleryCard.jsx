@@ -4,7 +4,13 @@ const GalleryCard = ({ toy }) => {
   const { image, name } = toy;
   return (
     <div>
-      <div className=" relative rounded-2xl w-full shadow-xl">
+      <div
+        data-aos="fade-up"
+        data-aos-anchor-placement="center-center"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1500"
+        className=" relative rounded-2xl w-full shadow-xl"
+      >
         <figure>
           <img className="rounded-2xl w-full h-60" src={image} alt="" />
         </figure>

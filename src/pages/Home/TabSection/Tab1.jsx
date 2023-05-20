@@ -20,6 +20,10 @@ const Tab1 = () => {
         legoRobot.map((robot) => {
           return (
             <div
+              data-aos="fade-left"
+              // data-aos-anchor-placement="center-center"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1500"
               key={robot._id}
               className="card w-[95%] md:w-full mx-auto md:mx-0 glass"
             >

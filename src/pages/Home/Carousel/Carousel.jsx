@@ -23,7 +23,7 @@ const Carousel = () => {
     </>
   );
   return (
-    <div className="carousel h-[460px] w-full">
+    <div className="carousel h-[480px] w-full">
       {/* slide 1 */}
       <div id="slide1" className="carousel-item relative w-full">
         <div className="flex flex-col-reverse md:flex-row items-center">

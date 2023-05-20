@@ -1,9 +1,24 @@
 import { Player } from "@lottiefiles/react-lottie-player";
+// eslint-disable-next-line no-unused-vars
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import the AOS CSS file
+import { useEffect } from "react";
 
 const ServiceCard = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
-    <div className="space-y-4 md:space-y-0 mx-auto md:flex justify-around  my-6">
-      <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="space-y-4 md:space-y-0 mx-auto md:flex justify-around  mb-6">
+      <div
+        data-aos="fade-right"
+        // data-aos-anchor-placement="center-center"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+        className="card w-96 bg-base-100 shadow-xl"
+      >
         <figure className="px-10 pt-10">
           {/* <img
             src="https://i.ibb.co/Gkf93x5/lego-3501431-960-720.jpg"
@@ -24,7 +39,13 @@ const ServiceCard = () => {
       </div>
 
       {/* card no 2  */}
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div
+        data-aos="fade-up"
+        // data-aos-anchor-placement="center-center"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+        className="card w-96 bg-base-100 shadow-xl"
+      >
         <figure className="px-10 pt-10">
           {/* <img
             src="https://i.ibb.co/h73StMh/business-3948253-1280.jpg"
@@ -46,7 +67,13 @@ const ServiceCard = () => {
       </div>
 
       {/* three */}
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div
+        data-aos="fade-left"
+        // data-aos-anchor-placement="center-center"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+        className="card w-96 bg-base-100 shadow-xl"
+      >
         <figure className="px-10 pt-10">
           {/* <img
             src="https://cdn.pixabay.com/photo/2018/11/21/21/54/bunny-3830669_960_720.jpg"
