@@ -12,7 +12,7 @@ const Team = () => {
       </div>
 
       <div className="hero ">
-        <div className="hero-content flex-col lg:flex-row">
+        <div className="hero-content overflow-hidden flex-col lg:flex-row">
           <div
             data-aos="fade-right"
             data-aos-anchor-placement="center-center"

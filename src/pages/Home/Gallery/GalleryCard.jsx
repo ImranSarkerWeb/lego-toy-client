@@ -3,7 +3,7 @@
 const GalleryCard = ({ toy }) => {
   const { image, name } = toy;
   return (
-    <div>
+    <div className="overflow-hidden">
       <div
         data-aos="fade-up"
         data-aos-anchor-placement="center-center"

@@ -11,13 +11,13 @@ const ServiceCard = () => {
   }, []);
 
   return (
-    <div className="space-y-4 md:space-y-0 mx-auto md:flex justify-around  mb-6">
+    <div className="space-y-4 overflow-hidden md:space-y-0 mx-auto md:flex justify-around  mb-6 py-4">
       <div
         data-aos="fade-right"
         // data-aos-anchor-placement="center-center"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
-        className="card md:w-96 bg-base-100 shadow-xl"
+        className="card  md:w-96 bg-base-100 shadow-xl"
       >
         <figure className="px-10 pt-10">
           {/* <img
@@ -44,7 +44,7 @@ const ServiceCard = () => {
         // data-aos-anchor-placement="center-center"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
-        className="card md:w-96 bg-base-100 shadow-xl"
+        className="card  md:w-96 bg-base-100 shadow-xl"
       >
         <figure className="px-10 pt-10">
           {/* <img

@@ -15,7 +15,7 @@ const Tab1 = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="grid overflow-hidden py-4 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {legoRobot &&
         legoRobot.map((robot) => {
           return (
@@ -25,7 +25,7 @@ const Tab1 = () => {
               data-aos-easing="ease-out-cubic"
               data-aos-duration="1500"
               key={robot._id}
-              className="card w-[95%] md:w-full mx-auto md:mx-0 glass"
+              className="card w-[95%]  md:w-full mx-auto md:mx-0 glass"
             >
               <figure className="w-1/2 h-1/2 md:w-3/4 mx-auto">
                 <img src={robot.photo} alt={robot.toyName} />

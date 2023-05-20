@@ -1,16 +1,23 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import Home from "../pages/Home/Home/Home";
-import Login from "../pages/Home/Login/Login";
-import Register from "../pages/Home/Login/Register";
+
 import ErrorPage from "../pages/Home/ErrorPage/ErrorPage";
-import Blog from "../pages/Home/Blog/Blog";
+// import Blog from "../pages/Home/Blog/Blog";
 import AddToy from "../pages/Home/AddToy/AddToy";
 import PrivateRoute from "./PrivateRoute";
-import AllToys from "../pages/Home/AllToys/AllToys";
+// import AllToys from "../pages/Home/AllToys/AllToys";
 import MyToys from "../pages/Home/MyToys/MyToys";
 import UpdateMyToy from "../pages/Home/MyToys/UpdateMyToy";
 import ToyDetails from "../pages/Home/ToyDetails/ToyDetails";
+import { Suspense, lazy } from "react";
+import Loader from "../pages/shared/Loader/Loader";
+const BlogPreview = lazy(() => import("../pages/Home/Blog/Blog"));
+const AllToysPreview = lazy(() => import("../pages/Home/AllToys/AllToys"));
+
+const LoginPreview = lazy(() => import("../pages/Home/Login/Login"));
+const RegisterPreview = lazy(() => import("../pages/Home/Login/Register"));
 
 const router = createBrowserRouter([
   {
@@ -24,17 +31,29 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog",
-        element: <Blog></Blog>,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <BlogPreview />
+          </Suspense>
+        ),
         loader: () =>
           fetch("https://lego-store-server.vercel.app/questionanswers"),
       },
       {
         path: "/login",
-        element: <Login></Login>,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <LoginPreview></LoginPreview>
+          </Suspense>
+        ),
       },
       {
         path: "/register",
-        element: <Register />,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <RegisterPreview></RegisterPreview>
+          </Suspense>
+        ),
       },
       {
         path: "/mytoys",
@@ -46,7 +65,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/alltoys",
-        element: <AllToys />,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <AllToysPreview />
+          </Suspense>
+        ),
         loader: () => fetch("https://lego-store-server.vercel.app/toys"),
       },
       {
