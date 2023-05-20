@@ -26,7 +26,7 @@ const AllToys = () => {
   const handleSearch = (event) => {
     event.preventDefault();
     const searchValue = event.target.search.value;
-    fetch(`http://localhost:5000/search?q=${searchValue}`)
+    fetch(`https://lego-store-server.vercel.app/search?q=${searchValue}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);

@@ -4,11 +4,13 @@ import MyToysRow from "./MyToysRow";
 import Swal from "sweetalert2";
 import useTitle from "../../../hooks/useTitle";
 import { Player } from "@lottiefiles/react-lottie-player";
+import { FaSortNumericDown, FaSortNumericUpAlt } from "react-icons/fa";
 
 const MyToys = () => {
   useTitle("My Toys");
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
+  const [toggle, setToggle] = useState(true);
   const email = user?.email;
 
   const handleDelete = (id) => {
@@ -36,7 +38,16 @@ const MyToys = () => {
       }
     });
   };
-
+  const handleSort = () => {
+    fetch(
+      `https://lego-store-server.vercel.app/mysortedtoys?email=${email}&sort=${toggle}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setMyToys(data);
+        setToggle(!toggle);
+      });
+  };
   useEffect(() => {
     fetch(`https://lego-store-server.vercel.app/mytoys?email=${email}`)
       .then((res) => res.json())
@@ -55,7 +66,27 @@ const MyToys = () => {
                 <th>Toy Name</th>
                 <th>Seller</th>
                 <th>Sub-Category</th>
-                <th>Price</th>
+                <th>
+                  <div className="flex items-center gap-2">
+                    {" "}
+                    Price{" "}
+                    {toggle ? (
+                      <button
+                        onClick={handleSort}
+                        className="btn btn-xs text-xl btn-accent text-white"
+                      >
+                        <FaSortNumericDown></FaSortNumericDown>
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleSort}
+                        className="btn btn-xs text-xl btn-accent text-white"
+                      >
+                        <FaSortNumericUpAlt></FaSortNumericUpAlt>
+                      </button>
+                    )}
+                  </div>
+                </th>
                 <th>
                   Available <br /> Quantity
                 </th>
