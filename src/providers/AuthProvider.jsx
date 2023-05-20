@@ -47,26 +47,8 @@ const AuthProvider = ({ children }) => {
   };
 
   const googleSignIn = async () => {
-    try {
-      const result = await signInWithPopup(auth, googleProvider);
-      const gmailUser = result.user;
-      console.log("user created using gmail", gmailUser);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-  const githubSignIn = async () => {
-    gitHubProvider.addScope("user:email");
-
-    try {
-      const result = await signInWithPopup(auth, gitHubProvider);
-      const githubUser = result.user;
-      const email = result.user.email;
-      console.log(email);
-      console.log("user created using github", githubUser);
-    } catch (error) {
-      console.log(error.message);
-    }
+    setLoading(true);
+    return signInWithPopup(auth, googleProvider);
   };
 
   useEffect(() => {
@@ -87,7 +69,6 @@ const AuthProvider = ({ children }) => {
     signIn,
     logOut,
     googleSignIn,
-    githubSignIn,
     notify,
   };
   return (

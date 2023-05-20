@@ -17,7 +17,11 @@ const AllToys = () => {
   //       console.log(data);
   //     });
   // };
-
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const searchValue = event.target.search.value;
+    console.log(searchValue);
+  };
   return (
     <div>
       <div className="flex justify-between">
@@ -27,11 +31,12 @@ const AllToys = () => {
           Showing {toys.length >= 20 ? 20 + " toys" : toys.length} Out Of{" "}
           {toys.length}
         </h1>
-        <form className="flex justify-end gap-4 mb-2">
+        <form onSubmit={handleSearch} className="flex justify-end gap-4 mb-2">
           {" "}
           <div className="form-control">
             <input
               type="text"
+              name="search"
               placeholder="Search"
               className="input input-bordered"
             />

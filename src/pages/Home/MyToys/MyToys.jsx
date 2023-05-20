@@ -37,9 +37,6 @@ const MyToys = () => {
     });
   };
 
-  const handleUpdate = (id) => {
-    console.log(id);
-  };
   useEffect(() => {
     fetch(`http://localhost:5000/mytoys?email=${email}`)
       .then((res) => res.json())
@@ -73,7 +70,6 @@ const MyToys = () => {
                     key={toy._id}
                     toy={toy}
                     handleDelete={handleDelete}
-                    handleUpdate={handleUpdate}
                   ></MyToysRow>
                 ))}
             </tbody>

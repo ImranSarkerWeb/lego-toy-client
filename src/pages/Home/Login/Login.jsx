@@ -30,7 +30,16 @@ const Login = () => {
         setError(error.message);
       });
   };
-
+  const handleGoogleLogin = async () => {
+    try {
+      const result = await googleSignIn();
+      const gmailUser = result.user;
+      console.log("user created using gmail", gmailUser);
+      navigate(from, { replace: true });
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   return (
     <div className="text-center my-8">
       <h2 className="text-4xl my-8">Please Login!</h2>
@@ -69,7 +78,7 @@ const Login = () => {
       <div className="divider w-full max-w-xs mx-auto my-8">OR</div>
       <div>
         <button
-          onClick={googleSignIn}
+          onClick={handleGoogleLogin}
           className="btn btn-outline btn-accent mb-4  w-full max-w-xs"
         >
           <FaGoogle className="me-2 text-amber-400" /> Login With Google

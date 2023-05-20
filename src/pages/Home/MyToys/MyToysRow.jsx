@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
 // eslint-disable-next-line react/prop-types
-const MyToysRow = ({ toy, handleDelete, handleUpdate }) => {
+const MyToysRow = ({ toy, handleDelete }) => {
   const { user } = useContext(AuthContext);
   const {
     _id,

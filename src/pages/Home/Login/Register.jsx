@@ -29,6 +29,7 @@ const Register = () => {
       .then((result) => {
         const createdUser = result.user;
         setSuccess("User has been created successfully.");
+
         updateUserProfile(result.user, name, photo)
           .then(() => {
             console.log("user profile updated");
@@ -36,6 +37,7 @@ const Register = () => {
           .catch((error) => {
             console.log(error.message);
           });
+
         form.reset();
       })
       .catch((error) => {
@@ -48,6 +50,16 @@ const Register = () => {
       displayName: name,
       photoURL: photo,
     });
+  };
+
+  const handleGoogleLogin = async () => {
+    try {
+      const result = await googleSignIn();
+      const gmailUser = result.user;
+      console.log("user created using gmail", gmailUser);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
   return (
     <div className="text-center my-8">
@@ -106,7 +118,7 @@ const Register = () => {
       <div className="divider w-full max-w-xs mx-auto my-8">OR</div>
       <div>
         <button
-          onClick={googleSignIn}
+          onClick={handleGoogleLogin}
           className="btn btn-outline btn-accent mb-4 w-full max-w-xs "
         >
           <FaGoogle className="me-2 text-amber-400" />
